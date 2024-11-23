@@ -1,4 +1,14 @@
 <div class="nav-container">
+  <!-- PC端菜单 -->
+  <ul class="right-links">
+    {{ range .Site.Params.TopMenu }}
+    <li>
+      <a href="{{ .url | relURL }}">{{ .name }}</a>
+    </li>
+    {{ end }}
+  </ul>
+
+  <!-- 移动端菜单 (保持原有代码不变) -->
   <input type="checkbox" id="nav-toggle" class="nav-toggle">
   <label for="nav-toggle" class="nav-toggle-label">
     <div class="square-menu">
