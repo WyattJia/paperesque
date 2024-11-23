@@ -1,9 +1,28 @@
-<ul class="list-unstyled right-links">
-{{ range .Site.Params.TopMenu }}
-          <li>
-            <a href="{{ .url | relURL }}">
-              <span class="post-title">{{ .name }}</span>
-            </a>
-          </li>
-{{ end }}
-</ul>
+<div class="nav-container">
+  <input type="checkbox" id="nav-toggle" class="nav-toggle">
+  <label for="nav-toggle" class="nav-toggle-label">
+    <div class="square-menu">
+      <span class="square"></span>
+      <span class="square"></span>
+      <span class="square"></span>
+      <span class="square"></span>
+    </div>
+  </label>
+  
+  <label class="nav-overlay" for="nav-toggle"></label>
+  
+  <nav class="nav-drawer">
+    <div class="nav-drawer__header">
+      <span class="nav-drawer__title">{{ .Site.Title }}</span>
+    </div>
+    <ul class="nav-drawer__list">
+      {{ range $index, $item := .Site.Params.TopMenu }}
+      <li class="nav-drawer__item">
+        <a href="{{ .url | relURL }}" class="nav-drawer__link">
+          <span class="nav-drawer__text">{{ .name }}</span>
+        </a>
+      </li>
+      {{ end }}
+    </ul>
+  </nav>
+</div>
