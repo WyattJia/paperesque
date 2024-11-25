@@ -3,8 +3,8 @@
     class="content-container look-sheet article-pad-v {{ if (or .Params.disableMarginNotes .Site.Params.disableMarginNotes) }}no-floating-footnotes{{ end }}"
     itemscope
     itemtype="https://schema.org/Article" >
-  <meta itemprop="author" content="{{ .Site.Params.Author }}" />
-  <meta itemprop="publisher" content="{{ .Site.Params.Author }}" />
+  <meta itemprop="author" content="{{ .Site.Params.Author.name }}" />
+  <meta itemprop="publisher" content="{{ .Site.Params.Author.name }}" />
   <meta itemprop="image" content="{{ partial "feature_image" . }}" />
   <h1 itemprop="name" id="title">{{ .Title }}</h1>
   <meta itemprop="headline" content="{{ .Title }}" />
